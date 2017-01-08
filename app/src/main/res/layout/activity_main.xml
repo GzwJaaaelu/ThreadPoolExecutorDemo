@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.jaaaelu.gzw.threadpoolexecutordemo.ui.activity.MainActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <Button
+        android:id="@+id/btn_single_thread_pool"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_with_ripple"
+        android:text="单线程的线程池"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:id="@+id/btn_fixed_thread_pool"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_with_ripple"
+        android:text="固定线程数的线程池"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:id="@+id/btn_cached_thread_pool"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_with_ripple"
+        android:text="动态线程数的线程池"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:id="@+id/btn_custom_thread_pool"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_with_ripple"
+        android:text="自定义的线程池"
+        android:textColor="#FFF"/>
+
+</LinearLayout>

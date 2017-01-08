@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_girl_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        app:actualImageScaleType="centerCrop"
+        app:fadeDuration="1800"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_girl_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        app:actualImageScaleType="centerCrop"
+        app:fadeDuration="1800"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_girl_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        app:actualImageScaleType="centerCrop"
+        app:fadeDuration="1800"/>
+
+</LinearLayout>
