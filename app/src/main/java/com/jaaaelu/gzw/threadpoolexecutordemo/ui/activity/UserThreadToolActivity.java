@@ -23,20 +23,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class UserThreadToolActivity extends BaseActivity {
-    public static final String THREAD_TOOL_TYPE = "THREAD_TOOL_TYPE";
-    public static final String SINGLE_THREAD_POOL = "single_thread_pool";
-    public static final String FIXED_THREAD_POOL = "fixed_thread_pool";
-    public static final String CACHED_THREAD_POOL = "cached_thread_pool";
-    public static final String CUSTOM_THREAD_POOL = "custom_thread_pool";
+    public static final String THREAD_TOOL_TYPE = "THREAD_TOOL_TYPE";           //  线程池类型常量
+    public static final String SINGLE_THREAD_POOL = "single_thread_pool";       //  表示单线程的线程池常量
+    public static final String FIXED_THREAD_POOL = "fixed_thread_pool";         //  表示固定线程数的线程池常量
+    public static final String CACHED_THREAD_POOL = "cached_thread_pool";       //  表示动态线程数的线程池常量
+    public static final String CUSTOM_THREAD_POOL = "custom_thread_pool";       //  表示自定义的线程池常量
     @BindView(R.id.toolbar)
-    Toolbar mToolbar;
+    Toolbar mToolbar;                                                           //  顶部的Toolbar
     @BindView(R.id.rv_image_list)
-    RecyclerView mShowImagesView;
-    @BindView(R.id.trl_refresh)
-    TwinklingRefreshLayout mRefreshLayout;
-    public ExecutorService mExecutorService;
-    public List<String> mImageUrl;
-    private ImageLoadAdapter mAdapter;
+    RecyclerView mShowImagesView;                                               //  展示图片的列表
+    public ExecutorService mExecutorService;                                    //  线程池
+    public List<String> mImageUrl;                                              //  图片链接的List
+    private ImageLoadAdapter mAdapter;                                          //  列表的适配器
 
     @Override
     protected int getLayoutId() {
@@ -45,6 +43,7 @@ public class UserThreadToolActivity extends BaseActivity {
 
     @Override
     protected void getData() {
+        //  根据拿到的不同常量创建不同类型的线程池
         String type = getIntent().getStringExtra(THREAD_TOOL_TYPE);
         switch (type) {
             case SINGLE_THREAD_POOL:
@@ -75,6 +74,7 @@ public class UserThreadToolActivity extends BaseActivity {
     protected void initView() {
         initToolbar(mToolbar);
         mToolbar.setTitle("图片加载");
+        //  初始化列表
         mShowImagesView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new ImageLoadAdapter(this);
         mShowImagesView.setAdapter(mAdapter);

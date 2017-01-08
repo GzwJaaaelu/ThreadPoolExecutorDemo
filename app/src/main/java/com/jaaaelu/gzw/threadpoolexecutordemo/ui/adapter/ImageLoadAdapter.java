@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  */
 
 public class ImageLoadAdapter extends RecyclerView.Adapter<ImageLoadAdapter.ImageLoadHolder> {
-    private WeakReference<UserThreadToolActivity> mActivityRef;
+    private WeakReference<UserThreadToolActivity> mActivityRef;         //  Activity的弱引用
     private LayoutInflater mLayoutInflater;
 
     public ImageLoadAdapter(UserThreadToolActivity activity) {
@@ -62,12 +62,16 @@ public class ImageLoadAdapter extends RecyclerView.Adapter<ImageLoadAdapter.Imag
         public ImageLoadHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
             setLayoutParam(girl0);
             setLayoutParam(girl1);
             setLayoutParam(girl2);
         }
 
+        /**
+         * 动态计算View宽度
+         *
+         * @param iv
+         */
         private void setLayoutParam(ImageView iv) {
             if (mActivityRef.get() != null) {
                 DisplayMetrics dm = mActivityRef.get().getApplicationContext().getResources().getDisplayMetrics();
@@ -77,6 +81,10 @@ public class ImageLoadAdapter extends RecyclerView.Adapter<ImageLoadAdapter.Imag
             }
         }
 
+        /**
+         * 执行加载图片任务
+         * @param position
+         */
         public void loadImage(int position) {
             if (mActivityRef.get() != null) {
                 mActivityRef.get().mExecutorService.execute(new ImageTask(girl0, (position + 1) * 1));

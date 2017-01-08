@@ -10,16 +10,10 @@
 
     <include layout="@layout/include_toolbar"/>
 
-    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
-        android:id="@+id/trl_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_image_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
-    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 </LinearLayout>
